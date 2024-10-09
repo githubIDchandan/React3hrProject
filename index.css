@@ -1,0 +1,51 @@
+
+.parentuser{
+    border-bottom: 1px solid grey;
+    display: inline-block;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+}
+.user{
+    /* background-color: aqua; */
+    margin-top: 10px;
+    
+}
+.userinfo{
+    display: inline;
+    
+   
+}
+
+.dbtn{
+    margin: 10px;
+    padding: 5px;
+    cursor: pointer;
+}
+.dbtn:hover{
+    background-color: transparent;
+    color: red;
+}
+.ebtn{
+    padding: 5px;
+    cursor: pointer;
+}
+.ebtn:hover{
+    background-color: transparent;
+}
+.parentheader{
+    text-align: center;
+    margin: 0px;
+}
+.movie_heading{
+    font-size: 40px;
+    margin: 10px;
+}
+.movie_number{
+    margin-right: 170px;
+    display: block;
+}
+.movie_findslot{
+    margin-right: 80px;
+    margin-top: 20px;
+}

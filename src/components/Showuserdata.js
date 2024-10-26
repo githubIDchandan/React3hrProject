@@ -2,31 +2,41 @@
 
 import { useState } from "react"
 
-const Showuserdata=(props)=>{
-    // console.log(props.data)
-    const [list,setList]=useState({props})
-    console.log(list)
-    console.log(props)
-    if(props.data.length===0){
+const Showuserdata=({filter,setfilter,setArrData,editHandler})=>{
+
+ 
+    if(filter.length===0){
         return<h1>Nothing Present</h1>
     }
- 
+    const removeHandler=(id)=>{
+        
+       const filterData=   filter.filter((item)=>{
+            return item.userSeat!=id;
+          })
+      
+          setfilter(filterData)
+        setArrData(filterData)
+    }
     return(
         <div>
-            {props.data.map((item,index)=>{
+            {filter.map((item,index)=>{
                 return (
-                    <div className="parentuser">
+                    <div key={index} className="parentuser">
                     <div className="user">
                       <h2 className="userinfo">{item.userName}{" "}{item.userSeat}</h2>
                     </div>
                     <div>
-                    <button className="dbtn" onClick={(e)=>{
-                        // let filteredList=list.data.filter((item)=>{
-                        //     return item!=e.target.value;
-                        // })
-                        // setList(filteredList)
+                    <button className="dbtn" onClick={()=>{
+                        removeHandler(item.userSeat)
                     }}>Delete</button>
-                    <button className="ebtn">Edit✎</button>
+                    <button className="ebtn" onClick={()=>{
+                        removeHandler(item.userSeat)
+                        editHandler(
+                            {
+                            userName:item.userName,
+                            userSeat:item.userSeat
+                        })
+                    }}>Edit✎</button>
                     </div>
                  </div>
                 )

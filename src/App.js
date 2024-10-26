@@ -1,21 +1,17 @@
 import React, { useState } from "react"
 import ReactDOM from "react-dom/client";
-import Userdata from "./components/UserData";
+import Userdata from "./components/Userdata";
 import Showuserdata from "./components/Showuserdata";
 import Header from "./components/Header";
 
 
 
 const AppLayout=()=>{
-    // this solution will not work
-    // let arrayOfData=[];
+ 
     const [arrData,setArrData]=useState([]);
-
+    const [filter,setfilter]=useState([]);
+    const [edit,setEdit]=useState(null);
     const userDatahandler=(data)=>{
-    //    console.log(arrData)
-    //    arrayOfData.push(data)
-    // console.log(data.userSeat)
-    // console.log(arrData[0].userSeat);
     for(let i=0;i<arrData.length;i++){
         
     
@@ -24,14 +20,30 @@ const AppLayout=()=>{
             return alert("ALREADY BOOKED")
         }
     }
-    setArrData([data,...arrData])
+    setArrData([data,...arrData]);
+    setfilter([data,...arrData])
+    // console.log("hiijs")
+    
     }
-   console.log("render")
+//    console.log("app-render")
+
+     const filterHandler=(value)=>{
+        
+        setfilter(value)
+        // setArrData(value)
+     }
+    
+     const editHandler=(value)=>{
+           setEdit(value)
+     }
+  
+   
+
     return(
         <div>
-            <Header data={arrData}/>
-            <Userdata onSaveUserData={userDatahandler}/>
-            <Showuserdata data={arrData}/>
+            <Header filter={filter} filterHandler={filterHandler} data={arrData}/>
+            <Userdata userDatahandler={userDatahandler} filterHandler={filterHandler} edit={edit} setEdit={setEdit}/>
+            <Showuserdata filter={filter} setfilter={setfilter} setArrData={setArrData} editHandler={editHandler}/>
         </div>
     )
 }

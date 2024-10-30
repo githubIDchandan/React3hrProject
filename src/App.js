@@ -9,6 +9,7 @@ import Header from "./components/Header";
 const AppLayout=()=>{
  
     const [arrData,setArrData]=useState([]);
+    const [filterData,setFilterData]=useState([]);
 
     const userDatahandler=(data)=>{
 
@@ -19,15 +20,16 @@ const AppLayout=()=>{
         }
     }
     setArrData([data,...arrData]);
+    setFilterData([data,...arrData]);
     
     }
 console.log("kkk")
 
     return(
         <div>
-            <Header data={arrData}/>
+            <Header arrData={arrData} setFilterData={setFilterData}/>
             <Userdata userDatahandler={userDatahandler} />
-            <Showuserdata arrData={arrData} setArrData={setArrData}/>
+            <Showuserdata arrData={arrData} setArrData={setArrData} filterData={filterData} setFilterData={setFilterData}/>
         </div>
     )
 }

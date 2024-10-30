@@ -1,44 +1,47 @@
-// import Userlist from "./Userlist"
 
 import { useState } from "react"
 
-const Showuserdata=({arrData,setArrData})=>{
+const Showuserdata=({arrData,setArrData,filterData,setFilterData})=>{
 
    const [editbtn,setEditbtn]=useState({
     id:111,
     check:false,
    });
   const [name,setName]=useState("")
-   console.log(editbtn)
-    if(arrData.length===0){
+   console.log("after claen", filterData)
+    if(filterData.length===0){
         return<h1>Nothing Present</h1>
     }
 
     const deleteHandler=(item)=>{
-        // console.log(item)
-        const filter=arrData.filter((arrItem)=>{
+      
+        const filter=filterData.filter((arrItem)=>{
             return arrItem.userSeat!=item.userSeat;
         })
-        // console.log("jjjj",filter)
-        setArrData(filter);
+    
+        setFilterData(filter);
+        setArrData(filter)
     }
 
     const editHandler=(item)=>{
-           arrData.map((arrItem)=>{
+           filterData.map((arrItem)=>{
                 if(arrItem.userSeat==item.userSeat){
                      arrItem.userName=name;
-                     return arrData;
+                     return filterData;
                 }
 
                 
            })
-           setArrData(arrData)
+           setFilterData(filterData)
     }
+
+   
    
    return(
     <div>
+       
         {
-            arrData.map((item,index)=>{
+            filterData.map((item,index)=>{
                 return(
                     <div key={index} className="showdataparent">
                         
@@ -50,7 +53,7 @@ const Showuserdata=({arrData,setArrData})=>{
                                  setName(e.target.value)
                              }}
                         ></input>:<h1>{item.userName}</h1>}
-                        <h1>{item.userSeat}</h1>
+                        <h1 className="userseat">{""}{item.userSeat}</h1>
                         </div>
                         <div className="showbtn">
                         <button className="dbtn"
@@ -60,9 +63,9 @@ const Showuserdata=({arrData,setArrData})=>{
                         >Delete</button>
                         <button className="ebtn" 
                            onClick={()=>{
-                            // console.log(editbtn.check)
+                            
                             let ch=!editbtn.check;
-                            // console.log(ch)
+                       
                             if(editbtn.check){
                                 ch=false;
                             }

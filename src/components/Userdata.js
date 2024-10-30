@@ -13,20 +13,13 @@ const Userdata=(props)=>{
             userName:name,
             userSeat:seatNumber
         }
-    //    console.log(props)
+  
        userDatahandler(userData)
-        // console.log(userData)
-        // console.log(filterHandler)
-        // filterHandler(userData)
+       
         setName('');
         setSeatNumber('')
     }
-//    if(edit){
-//     console.log("edit",edit)
-//     setName(edit.userName);
-//     setSeatNumber(edit.userSeat);
-//     setEdit(null)
-//    }
+
   
     return(
         
@@ -42,14 +35,13 @@ const Userdata=(props)=>{
             setSeatNumber(e.target.value)
            }}></input>
            <button onClick={()=>{
-            // console.log("hii") 
+      
            
            
            }}>ADD</button>
         </div>
         </form>
-        {/* {console.log(userData)} */}
-        {/* <Showuserdata data={userData}/> */}
+      
         </div>
 
     )

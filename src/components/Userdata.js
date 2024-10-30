@@ -34,13 +34,11 @@ const Userdata=(props)=>{
             <form onSubmit={addUserDetailHandler}>
            <div>
            <label>User Name:</label>
-           <input value={edit?edit.userName:name} onChange={(e)=>{
-                setEdit(null)
+           <input value={name} onChange={(e)=>{
                 setName(e.target.value);
            }}></input>
            <label>Seat Number:</label>
-           <input type="number" value={edit?edit.userSeat:seatNumber} onChange={(e)=>{
-            setEdit(null)
+           <input type="number" value={seatNumber} onChange={(e)=>{
             setSeatNumber(e.target.value)
            }}></input>
            <button onClick={()=>{

@@ -13,10 +13,10 @@ const Header=({arrData,setFilterData})=>{
     return(
         <div className="parentheader">
             <h1 className="movie_heading">Movie Booking</h1>
-            <span className="movie_number">Total Booked:{arrData.length}</span>
+            <span className="movie_number">Total Booked: <button className="totalbookbtn">{arrData.length}</button></span>
             <div className="movie_findslot">
-            <label>Find Slot:</label>
-            <input type="number" onChange={(e)=>{
+            <label className="findslot">Find Slot:</label>
+            <input type="number" className="findslotInp" onChange={(e)=>{
             
               if(e.target.value){
                 filterHandler(e.target.value);

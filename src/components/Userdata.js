@@ -23,22 +23,22 @@ const Userdata=(props)=>{
   
     return(
         
-        <div >
+        <div className="Userdata">
             <form onSubmit={addUserDetailHandler}>
            <div>
-           <label>User Name:</label>
-           <input value={name} onChange={(e)=>{
+           <label className="userlabel">User Name: </label>
+           <input className="userinp"  value={name} onChange={(e)=>{
                 setName(e.target.value);
            }}></input>
-           <label>Seat Number:</label>
-           <input type="number" value={seatNumber} onChange={(e)=>{
+           <label className="userlabel"> Seat Number: </label>
+           <input  className="userinp" type="number"  value={seatNumber} onChange={(e)=>{
             setSeatNumber(e.target.value)
            }}></input>
-           <button onClick={()=>{
+           <button className="userbtn" onClick={()=>{
       
            
            
-           }}>ADD</button>
+           }}>{"Add"}</button>
         </div>
         </form>
       

@@ -32,6 +32,7 @@ body{
 .movie_number{
     margin-right: 170px;
     display: block;
+    font-size: larger;
 }
 .movie_findslot{
     margin-right: 80px;
@@ -104,4 +105,44 @@ body{
 }
 .userseat{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.Userdata{
+    /* padding: 50px; */
+    /* background-color: yellowgreen; */
+    height: 80px;
+   display: flex;
+   align-items: center;
+}
+.userinp{
+    padding: 10px;
+    border-radius: 5px;
+}
+.userlabel{
+    font-size: larger;
+    font-family:'Times New Roman', Times, serif;
+}
+.userbtn{
+    padding: 8px;
+    margin-left: 10px;
+    font-size: large;
+    width: 80px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+.totalbookbtn{
+    /* padding: 10px; */
+    background-color: black;
+    color: gold;
+}
+.findslot{
+    font-size: large;
+}
+.findslotInp{
+    padding: 10px;
+    border-radius: 5px;
+    background-color: gainsboro;
+    color: black;
+    /* font-size: large; */
 }

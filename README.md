@@ -8,5 +8,22 @@
    -> User can filter/find particular seat number is Booked or Available.
    
    -> User can Edit and Delete Particulat Seat.
+![alt text](<Screenshot (602)-1.png>)
 
-![alt text](<Screenshot (592).png>)
+![alt text](<Screenshot (593)-1.png>)
+
+![alt text](<Screenshot (594)-1.png>)
+
+![alt text](<Screenshot (595)-1.png>)
+
+![alt text](<Screenshot (597)-1.png>)
+
+
+![alt text](<Screenshot (596)-1.png>)
+
+
+![alt text](<Screenshot (598)-1.png>)
+
+![alt text](<Screenshot (601).png>)
+
+
